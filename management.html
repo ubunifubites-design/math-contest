@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Ubunifu - Math & Science Excellence</title>
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --accent: #ffcc00;
+      --dark: #0b1a2e;
+      --light: #f4f8ff;
+      --text: #222;
+      --muted: #555;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(13, 71, 161, 0.97);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    header small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .robotics-btn {
+      background: var(--accent);
+      color: black !important;
+      font-weight: 900;
+      padding: 10px 16px;
+      border-radius: 12px;
+      transition: 0.3s;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .robotics-btn:hover {
+      background: orange;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      height: 70vh;
+      background: url("logo.png") no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.55));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      color: white;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero-content h2 {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .hero-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 85px 60px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 34px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-weight: 900;
+    }
+
+    .section p {
+      font-size: 16px;
+      max-width: 950px;
+      margin: auto;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* ABOUT CARDS */
+    .about-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .about-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: left;
+      transition: 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-card h4 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: var(--secondary);
+    }
+
+    .about-card p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    /* TEAM */
+    .team {
+      background: white;
+      padding: 90px 60px;
+      text-align: center;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.05);
+    }
+
+    .team h3 {
+      font-size: 34px;
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .team p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .team-card {
+      background: var(--light);
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: 0.35s;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .team-card h4 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+
+    .team-card span {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .team-card p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 90px 60px;
+      text-align: center;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+    }
+
+    .cta h3 {
+      font-size: 34px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.8;
+      opacity: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .cta button {
+      background: var(--accent);
+      border: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .cta button:hover {
+      background: orange;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 35px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .hero-content h2 {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .team {
+        padding: 70px 20px;
+      }
+
+      .cta {
+        padding: 70px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    
+    <div>
+      <h1>UBUNIFU</h1>
+      <small>Math & Science Excellence</small>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="programs.html">Programs</a>
+    <a href="management.html">About</a>
+    <a href="talk.html">Support</a>
+    
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>About Ubunifu</h2>
+    <p>
+      Ubunifu is a learning and excellence organization committed to helping learners
+      succeed in Mathematics, Science, and innovation through competitions, congress programs,
+      mentorship, and hands-on training.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section">
+  <h3>Who We Are</h3>
+  <p>
+    Ubunifu partners with private schools, public schools, and compassion projects to empower learners
+    with academic excellence and 21st century skills. We believe every learner can succeed when given
+    the right environment, guidance, and exposure to competitive learning experiences.
+  </p>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="icon"></div>
+      <h4>Our Mission</h4>
+      <p>
+        To inspire and empower learners to excel in Mathematics and Science through competitions,
+        mentorship, creativity, and innovation programs that build confidence and future readiness.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div class="icon"></div>
+      <h4>Our Vision</h4>
+      <p>
+        To become a leading educational excellence organization that produces learners with strong academic
+        performance and practical 21st century skills for future careers and leadership.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div class="icon"></div>
+      <h4>Our Core Values</h4>
+      <p>
+        Excellence, Integrity, Innovation, Teamwork, Discipline, and Learner Empowerment.
+        We focus on creating meaningful programs that bring long-term impact.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM / OWNERS SECTION -->
+<section class="team">
+  <h3>Meet the Leadership</h3>
+  <p>
+    Ubunifu is guided by a passionate team of educators and innovators committed to improving
+    learning outcomes and inspiring the next generation of problem-solvers.
+  </p>
+
+  <div class="team-grid">
+
+    <!-- OWNER 1 -->
+    <div class="team-card">
+      <img src="new 2.png" alt="Founder Photo">
+      <h4>Madam:Winnie Awino</h4>
+      <span>Founder & Program Director</span>
+      <p>
+        Madam Winnie is passionate about academic excellence and innovation. He leads Ubunifu programs
+        in Mathematics, Science competitions, mentorship and skill development.
+      </p>
+    </div>
+
+    <!-- OWNER 2 -->
+    <div class="team-card">
+      <img src="ChatGPT Image Feb 7, 2026, 04_07_08 PM.png" alt="Co-Founder Photo">
+      <h4>Mr Melvin Egala</h4>
+      <span>Co-Founder & Operations Lead</span>
+      <p>
+        Melvin supports Ubunifu operations, coordination and partnerships. He ensures that programs
+        are well planned, executed and impactful in schools and community projects.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta">
+  <h3>Partner With Ubunifu Today</h3>
+  <p>
+    Let us help your school or project improve Mathematics and Science performance through exciting
+    contests, science congress, mentorship programs, and innovation challenges.
+  </p>
+
+  <button onclick="window.location.href='talk.html'">Talk to Us</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> <b>Ubunifu</b> | Math & Science Excellence. All Rights Reserved.</p>
+  <p style="margin-top: 8px;">Designed for Excellence | <a href="#" onclick="openRobotics()">Robotics Department</a></p>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+
+  function openRobotics() {
+    window.open("https://ubunifu.online/", "_blank");
+  }
+</script>
+
+</body>
+</html>

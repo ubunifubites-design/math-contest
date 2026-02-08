@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ubunifu - Math & Science Excellence | Smart Learning Platform</title>
+
+  <meta name="description" content="Ubunifu is a modern learning platform offering high-quality Math and Science lessons, interactive quizzes, revision materials, and academic support for learners. Improve performance with Ubunifu Excellence." />
+
+  <meta name="keywords" content="Ubunifu, math learning, science learning, revision platform, KCSE revision, KCPE revision, online learning Kenya, math quizzes, science quizzes, secondary school learning, primary school learning ,digital learning,coding for kids,coding course,coding for primary,coding in kenya," />
+
+  <meta name="author" content="Ubunifu Excellence" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Correct Canonical -->
+  <link rel="canonical" href="https://ubunifu.online/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ubunifu - Math & Science Excellence" />
+  <meta property="og:description" content="Boost your Math and Science performance with Ubunifu. Get lessons, quizzes, revision support, and smart learning resources." />
+  <meta property="og:image" content="https://ubunifu.online/logo.png" />
+  <meta property="og:url" content="https://ubunifu.online/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ubunifu Excellence" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ubunifu - Math & Science Excellence" />
+  <meta name="twitter:description" content="Learn Math and Science easily with Ubunifu. Interactive lessons, quizzes and revision tools." />
+  <meta name="twitter:image" content="https://ubunifu.online/logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Ubunifu - Math & Science Excellence",
+    "url": "https://ubunifu.online/",
+    "logo": "https://ubunifu.online/logo.png",
+    "description": "Ubunifu is an educational learning platform offering Math and Science lessons, quizzes, and revision resources for learners.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE",
+      "addressLocality": "Kenya"
+    }
+  }
+  </script>
+
+
+  <!-- YOUR CSS STARTS HERE -->
+  <style>
+
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --accent: #ffcc00;
+      --dark: #0b1a2e;
+      --light: #f4f8ff;
+      --text: #222;
+      --muted: #333;
+      --cardShadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(13, 71, 161, 0.97);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 14px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 12px;
+      object-fit: contain;
+      background: white;
+      padding: 6px;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    header small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      transition: 0.3s;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 92vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    /* VIDEO BACKGROUND */
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* DARK OVERLAY */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.35));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      color: white;
+      text-align: left;
+      padding: 40px;
+      max-width: 1000px;
+      z-index: 2;
+      border-radius: 25px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      box-shadow: 0px 15px 40px rgba(0,0,0,0.35);
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .hero-content h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      max-width: 780px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: orange;
+      transform: scale(1.06);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.06);
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 900;
+    }
+
+    .section p {
+      font-size: 17px;
+      max-width: 950px;
+      margin: auto;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    /* CARDS */
+    .cards {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--cardShadow);
+      transition: 0.35s;
+      text-align: left;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0px 18px 45px rgba(0, 0, 0, 0.25);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      height: 190px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* WHY CHOOSE US */
+    .why {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+
+    .why-box {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: var(--cardShadow);
+      transition: 0.3s;
+      border-left: 6px solid var(--accent);
+    }
+
+    .why-box:hover {
+      transform: translateY(-6px);
+    }
+
+    .why-box h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .why-box p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(120deg, #0d47a1, #1976d2);
+      color: white;
+      border-radius: 25px;
+      padding: 55px 40px;
+      margin-top: 70px;
+      box-shadow: var(--cardShadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.12);
+      top: -50px;
+      left: -50px;
+      border-radius: 50%;
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(255,255,255,0.1);
+      bottom: -60px;
+      right: -60px;
+      border-radius: 50%;
+    }
+
+    .contact h3 {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact p {
+      font-size: 16px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.7;
+      opacity: 0.95;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-details {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-details div {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      header {
+        padding: 14px 18px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(13, 71, 161, 0.98);
+        position: absolute;
+        top: 78px;
+        left: 0;
+        padding: 15px;
+        gap: 10px;
+        text-align: center;
+        box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-content {
+        text-align: center;
+        padding: 25px;
+      }
+
+      .hero-content h2 {
+        font-size: 30px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .section {
+        padding: 65px 18px;
+      }
+
+      .logo-img {
+        width: 48px;
+        height: 48px;
+      }
+
+      header h1 {
+        font-size: 18px;
+      }
+
+      header small {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="logo.png" alt="UBUNIFU Logo" class="logo-img">
+      <div>
+        <h1>UBUNIFU</h1>
+        <small>Math & Science Excellence Programs</small>
+      </div>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="management.html">About</a>
+      <a href="#contact">Contact</a>
+      <a href="talk.html">Support</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop playsinline>
+      <source src="8197042-hd_1920_1080_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <h2>Empowering Learners in Kenya with 21st Century Skills</h2>
+      <p>
+        Ubunifu works with Private Schools, Public Schools and Compassion Projects to strengthen
+        performance in <b>Mathematics and Science</b> through competitions, mentorship, science congress,
+        innovation challenges and practical learning experiences.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToPrograms()">Explore Our Programs</button>
+        <button class="btn-secondary" onclick="window.location.href='talk.html'">Talk to Us</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" id="programs">
+    <h2>Our Key Programs</h2>
+    <p>
+    Our programs operate under the <b>Akili Quest Initiative (AQI)</b>, a learning and mentorship 
+    platform dedicated to empowering learners in Kenya through academic excellence and practical
+     skill development. Through AQI, we nurture innovation, leadership, teamwork, confidence,
+      creativity and strong problem-solving abilities to prepare learners for real-world success 
+      and future careers.
+
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="pexels-sirmudi_photography-2155088036-35119581.jpg" alt="Math Contest">
+        <h3>Mathematics Contests</h3>
+        <p>
+          We organize exciting math competitions that sharpen learners’ speed, accuracy, confidence
+          and love for Mathematics.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg" alt="Science Congress">
+        <h3>Science Congress</h3>
+        <p>
+          Learners showcase experiments and innovations through scientific research projects that
+          build curiosity, creativity and analytical thinking.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="WhatsApp Image 2026-02-07 at 16.07.18.jpeg" alt="21st Century Skills">
+        <h3>21st Century Skills Training</h3>
+        <p>
+          We equip learners with communication, teamwork, leadership, creativity and digital
+          skills required for success in modern society.
+        </p>
+      </div>
+    </div>
+
+  
+    <div class="why" id="about">
+      <div class="why-box">
+        <h4>✔ Trusted by Schools</h4>
+        <p>
+          We partner with private schools, public schools and compassion projects to deliver quality
+          educational programs that improve learner performance.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Practical Learning Approach</h4>
+        <p>
+          We focus on hands-on learning, making science and math enjoyable and understandable through
+          competitions and projects.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Innovation & Creativity</h4>
+        <p>
+          Ubunifu encourages learners to think beyond the classroom by developing creativity,
+          innovation and real-world problem-solving skills.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h4>✔ Mentorship & Guidance</h4>
+        <p>
+          We mentor learners to build confidence, discipline, leadership skills and strong academic
+          performance for future careers.
+        </p>
+      </div>
+    </div>
+
+    
+    <div class="contact" id="contact">
+      <h3>Partner With Ubunifu Today</h3>
+      <p>
+        Let us help your school or project improve Mathematics and Science performance while equipping learners
+        with 21st century skills. Contact us today to book a program, contest or science congress. 
+      </p>
+
+      <div class="contact-details">
+        <div> contact:+254 742 990546 / +254 705176259</div>
+        <div> Email: ubunifubites@gmail.com</div>
+        <div> Location: Kenya</div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <p>
+      © <span id="year"></span> <b>Ubunifu</b> | Math & Science Excellence Programs. All Rights Reserved.
+    </p>
+    <p style="margin-top: 8px;">
+      Designed for Excellence | <a href="#" onclick="openRobotics()">Robotics Department</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    function scrollToPrograms() {
+      document.getElementById("programs").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function openRobotics() {
+      window.open("https://ubunifu.online/", "_blank");
+    }
+
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

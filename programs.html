@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubunifu Programs | AQI - Math & Science Excellence</title>
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --accent: #ffcc00;
+      --dark: #071427;
+      --light: #f4f8ff;
+      --text: #222;
+      --muted: #555;
+      --radius: 18px;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      --glass: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(13, 71, 161, 0.92);
+      backdrop-filter: blur(12px);
+      color: white;
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: 900;
+      font-size: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    header small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .active {
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* BANNER */
+    .banner {
+      height: 70vh;
+      background: url("pexels-photo-256417.jpeg") no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.82), rgba(0,0,0,0.45));
+      top: 0;
+      left: 0;
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 900px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .banner-content h2 {
+      font-size: 50px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .banner-content p {
+      font-size: 17px;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    .banner-badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background: rgba(255, 204, 0, 0.18);
+      border: 1px solid rgba(255, 204, 0, 0.4);
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 90px 60px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 36px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 900;
+    }
+
+    .section p {
+      font-size: 16px;
+      max-width: 950px;
+      margin: auto;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .aql-box {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: white;
+      padding: 30px;
+      border-radius: 22px;
+      margin: 45px auto;
+      max-width: 950px;
+      box-shadow: var(--shadow);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .aql-box::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 204, 0, 0.22);
+      top: -90px;
+      right: -90px;
+      border-radius: 50%;
+    }
+
+    .aql-box h4 {
+      font-size: 24px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .aql-box p {
+      color: rgba(255,255,255,0.92);
+      line-height: 1.8;
+      z-index: 2;
+      position: relative;
+      font-size: 15px;
+    }
+
+    /* PROGRAM CARDS */
+    .cards {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: 0.35s;
+      text-align: left;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.22);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      border-radius: 15px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: 0.4s;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card h4 {
+      color: var(--secondary);
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255, 204, 0, 0.2);
+      color: #b67a00;
+      font-weight: 900;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+      padding: 50px;
+      margin-top: 80px;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: rgba(13, 71, 161, 0.08);
+      top: -80px;
+      left: -80px;
+      border-radius: 50%;
+    }
+
+    .contact::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 204, 0, 0.12);
+      bottom: -80px;
+      right: -80px;
+      border-radius: 50%;
+    }
+
+    .contact h3 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: var(--primary);
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact p {
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact input:focus, .contact textarea:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 10px rgba(25, 118, 210, 0.25);
+    }
+
+    .contact button {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #1976d2, #0d47a1);
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact button:hover {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+
+    /* CONTACT INFO BOXES */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .info-box {
+      background: rgba(13, 71, 161, 0.06);
+      border: 1px solid rgba(13, 71, 161, 0.12);
+      padding: 18px;
+      border-radius: 16px;
+      transition: 0.3s;
+    }
+
+    .info-box:hover {
+      transform: translateY(-6px);
+      background: rgba(13, 71, 161, 0.09);
+    }
+
+    .info-box h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .info-box p {
+      text-align: left;
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp-btn {
+      margin-top: 18px;
+      background: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ea955;
+      transform: scale(1.02);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .banner-content h2 {
+        font-size: 34px;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+
+      .contact {
+        padding: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+  
+    <div>
+      <h1>UBUNIFU</h1>
+      <small>Programs under Akili Quest Initiative (AQI)</small>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="management.html">About</a>
+    <a href="programs.html" class="active">Programs</a>
+  </nav>
+</header>
+
+<section class="banner">
+  <div class="banner-content">
+    <div class="banner-badge">Akili Quest Initiative (AQI)</div>
+    <h2>Our Programs</h2>
+    <p>
+      Ubunifu delivers structured academic excellence and innovation programs that empower learners
+      in Kenya to excel in Mathematics, Science and real-world problem-solving.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Programs We Offer</h3>
+  <p>
+    Our programs are designed to strengthen academic excellence while developing creativity, leadership,
+    confidence, teamwork, communication and critical thinking skills needed for the 21st century.
+  </p>
+
+  <div class="aql-box">
+    <h4>Akili Quest Initiative (AQI)</h4>
+    <p>
+      Ubunifu Programs operate under the <b>Akili Quest Initiative (AQI)</b>, a learning and mentorship
+      platform committed to empowering learners in Kenya through quality education, innovation and
+      practical skill development. Through AQI, we nurture academic excellence while building strong
+      leadership, teamwork, confidence, creativity and problem-solving abilities that prepare learners
+      for real-world success and future careers.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="download.jfif" alt="Math Contest">
+      <h4>Math Contest Program</h4>
+      <p>
+        We organize exciting mathematics contests that improve speed, logic, confidence and problem-solving skills.
+      </p>
+      <span class="tag">Competition</span>
+    </div>
+
+    <div class="card">
+      <img src="WhatsApp Image 2026-02-07 at 16.07.13.jpeg" alt="Science Congress">
+      <h4>Science Congress</h4>
+      <p>
+        Learners participate in science projects, experiments, and exhibitions that promote creativity, innovation and research skills.
+      </p>
+      <span class="tag">Exhibition</span>
+    </div>
+
+    <div class="card">
+      <img src="WhatsApp Image 2026-02-07 at 16.07.14.jpeg" alt="Mentorship">
+      <h4>Mentorship & Motivation</h4>
+      <p>
+        We mentor learners to believe in themselves, build discipline and set goals that lead to academic excellence and personal growth.
+      </p>
+      <span class="tag">Mentorship</span>
+    </div>
+
+    <div class="card">
+      <img src="WhatsApp Image 2026-02-07 at 16.07.17.jpeg" alt="Innovation">
+      <h4>Innovation Challenges</h4>
+      <p>
+        We guide learners to develop innovative ideas and build practical solutions to real-world challenges using science and creativity.
+      </p>
+      <span class="tag">Innovation</span>
+    </div>
+
+    <div class="card">
+      <img src="pexels-elvis-mkera-2581740-14909652.jpg" alt="Skills Training">
+      <h4>21st Century Skills Training</h4>
+      <p>
+        We train learners in teamwork, leadership, critical thinking, communication and digital skills needed for modern careers.
+      </p>
+      <span class="tag">Skills Training</span>
+    </div>
+
+    <div class="card">
+      <img src="talk.jpeg" alt="School Partnerships">
+      <h4>School Partnerships</h4>
+      <p>
+        We partner with schools and Compassion projects to deliver structured academic programs, contests, mentorship and learning events.
+      </p>
+      <span class="tag">Partnership</span>
+    </div>
+
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact">
+    <h3>Contact Ubunifu</h3>
+    <p>Send us a message and we will get back to you as soon as possible.</p>
+
+    <form onsubmit="sendMessage(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="whatsapp-btn" onclick="openWhatsApp()">
+      Chat With Us on WhatsApp
+    </div>
+
+    <p id="successMsg" style="text-align:center; margin-top:18px; font-weight:bold; color:green;"></p>
+
+    <div class="contact-info">
+      <div class="info-box">
+        <h4>Location</h4>
+        <p>Kenya (Available Nationwide)</p>
+      </div>
+
+      <div class="info-box">
+        <h4>Phone</h4>
+        <p>+254 742 990546/+254 705176259
+        </p>
+      </div>
+
+      <div class="info-box">
+        <h4>Email</h4>
+        <p>ubunifubites@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    © <span id="year"></span> <b>Ubunifu Programs</b> | Operating under <b>Akili Quest Initiative (AQI)</b>. <br>
+    Empowering Learners in Kenya with 21st Century Skills.
+  </p>
+  <p style="margin-top: 10px;">
+    Designed for Excellence | <a href="#" onclick="openRobotics()">Visit Ubunifu Online</a>
+  </p>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+
+  function sendMessage(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    document.getElementById("successMsg").innerText =
+      "Thank you " + name + "! Your message has been received. We will contact you soon.";
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+  }
+
+  function openRobotics() {
+    window.open("https://ubunifu.online/", "_blank");
+  }
+
+  function openWhatsApp() {
+    let phoneNumber = "254705176259";
+    let message = "Hello Ubunifu, I would like to know more about your programs under AQI.";
+    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>

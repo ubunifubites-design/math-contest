@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talk to Us | Ubunifu Support</title>
+
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #1976d2;
+      --accent: #ffcc00;
+      --dark: #0b1a2e;
+      --light: #f4f8ff;
+      --text: #222;
+      --muted: #555;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(13, 71, 161, 0.96);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      background: var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    header small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      height: 55vh;
+      background: url("pexels-elvis-mkera-2581740-14909652.jpg") no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+      top: 0;
+      left: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      color: white;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero-content h2 {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    /* SUPPORT OPTIONS */
+    .section {
+      padding: 70px 60px;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .support-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .support-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      text-align: left;
+      transition: 0.35s;
+    }
+
+    .support-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .support-card h4 {
+      font-size: 20px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .support-card p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .support-card button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .btn-email {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .btn-email:hover {
+      background: var(--primary);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ea955;
+    }
+
+    .btn-call {
+      background: var(--accent);
+      color: black;
+    }
+
+    .btn-call:hover {
+      background: orange;
+    }
+
+    /* CONTACT FORM */
+    .contact-box {
+      margin-top: 70px;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+      background: white;
+      padding: 45px;
+      border-radius: 25px;
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .contact-box h3 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .contact-box p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .contact-box input, .contact-box textarea, .contact-box select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      font-size: 15px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .contact-box input:focus, 
+    .contact-box textarea:focus, 
+    .contact-box select:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 10px rgba(25, 118, 210, 0.2);
+    }
+
+    .contact-box button {
+      width: 100%;
+      padding: 15px;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-box button:hover {
+      background: var(--primary);
+      transform: scale(1.02);
+    }
+
+    .success {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: 900;
+      color: green;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 35px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 14px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .hero-content h2 {
+        font-size: 30px;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .contact-box {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    
+    <div>
+      <h1>UBUNIFU</h1>
+      <small>Support & Interaction Center</small>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="management.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="talk-to-us.html" style="background: rgba(255,255,255,0.2);">Talk to Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Talk to Ubunifu Team</h2>
+    <p>
+      We are here to support your school, learners, teachers and parents.  
+      Choose how you want to connect with us today.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h3>How Would You Like to Reach Us?</h3>
+  <p>
+    We respond fast and professionally. Choose the method that is easiest for you.
+  </p>
+
+  <div class="support-grid">
+
+    <div class="support-card">
+      <h4>Email Support</h4>
+      <p>
+        Send us an official message and we will reply within 24 hours.
+      </p>
+      <button class="btn-email" onclick="openEmail()">Send Email</button>
+    </div>
+
+    <div class="support-card">
+      <h4>WhatsApp Chat</h4>
+      <p>
+        Chat with our team instantly for fast assistance and inquiries.
+      </p>
+      <button class="btn-whatsapp" onclick="openWhatsApp()">Chat on WhatsApp</button>
+    </div>
+
+    <div class="support-card">
+      <h4> Call Our Office</h4>
+      <p>
+        Want to talk directly? Call Ubunifu support and we guide <br><b>0705176259 / 0705176259</b>
+      </p>
+      <button class="btn-call" onclick="callNow()">Call Now</button>
+    </div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-box">
+    <h3>Send Us a Message</h3>
+    <p>Fill the form below and our team will contact you shortly.</p>
+
+    <form onsubmit="submitMessage(event)">
+      <input type="text" id="fullname" placeholder="Your Full Name" required>
+
+      <input type="email" id="email" placeholder="Your Email Address" required>
+
+      <input type="text" id="phone" placeholder="Phone Number (Optional)">
+
+      <select id="topic" required>
+        <option value="">-- Select Topic --</option>
+        <option value="Programs">Programs Inquiry</option>
+        <option value="School Partnership">School Partnership</option>
+        <option value="Math Contest">Math Contest</option>
+        <option value="Science Congress">Science Congress</option>
+        <option value="Mentorship">Mentorship</option>
+        <option value="Robotics">Robotics Department</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea id="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p class="success" id="successMsg"></p>
+  </div>
+
+</section>
+
+<footer>
+  <p>© <span id="year"></span> <b>Ubunifu</b> | Support Center. All Rights Reserved.</p>
+  <p style="margin-top: 8px;">We build learners for the future </p>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+
+  function openWhatsApp() {
+    let phoneNumber = "25405176259"; // replace with your number
+    let message = "Hello Ubunifu Team, I would like to inquire about your programs.";
+    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+  }
+
+  function openEmail() {
+    let email = "ubunifubites@gmail.com"; // replace with your email
+    let subject = "Ubunifu Inquiry";
+    let body = "Hello Ubunifu Team,\n\nI would like to inquire about your programs.\n\nThank you.";
+    window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
+  function callNow() {
+    let phoneNumber = "+254705176259"; // replace with your phone
+    window.location.href = "tel:" + phoneNumber;
+  }
+
+  function submitMessage(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("fullname").value;
+    let topic = document.getElementById("topic").value;
+
+    document.getElementById("successMsg").innerText =
+      "Thank you " + name + "! Your message about '" + topic + "' has been received. We will contact you soon.";
+
+    document.getElementById("fullname").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("topic").value = "";
+    document.getElementById("message").value = "";
+  }
+</script>
+
+</body>
+</html>
